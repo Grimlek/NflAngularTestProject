@@ -1,0 +1,13 @@
+.panel-md {
+  max-height: 300px !important;
+}
+
+.seasons-grid-container {
+  display: flex;
+  margin-top: 30px;
+
+  & .grid-filters-container {
+    margin-right: 50px;
+    width: 20%;
+  }
+}

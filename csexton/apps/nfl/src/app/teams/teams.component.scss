@@ -1,0 +1,13 @@
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.search {
+  flex: 100%;
+}
+
+.ml-50 {
+  margin-left: 50px;
+}

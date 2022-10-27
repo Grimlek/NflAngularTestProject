@@ -1,0 +1,11 @@
+<mat-card *ngIf="seasonsDisplay !== undefined" class="card">
+  <mat-card-header>
+    <mat-card-title>{{ team?.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    {{ seasonsDisplay }}<br/>
+    {{ seasonRecordDisplay }}<br/>
+    {{ playoffRecordDisplay }}<br/>
+    {{ superbowlRecordDisplay }}
+  </mat-card-content>
+</mat-card>

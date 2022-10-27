@@ -1,0 +1,10 @@
+<section class="page-container">
+  <div class="page-content">
+    <div class="grid-container">
+      <search (onSearchEvent)="onSearchEvent($event)" class="search"></search>
+      <grid [data]="paginatedTeams" [columnDefs]="columnDefs"
+            (onPageChangeEvent)="searchTeams($event)" (onTableRowSelectEvent)="onShowTeamDetailComponent($event)"></grid>
+      <team-detail *ngIf="selectedTeam !== undefined" [team]="selectedTeam" class="ml-50"></team-detail>
+    </div>
+  </div>
+</section>

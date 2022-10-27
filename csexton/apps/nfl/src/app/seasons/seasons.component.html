@@ -1,0 +1,22 @@
+<section class="page-container">
+  <div class="page-content">
+    <mat-form-field appearance="fill">
+      <mat-label>Seasons</mat-label>
+      <mat-select [(ngModel)]="selectedSeasonId" (selectionChange)="onSelectionChangeEvent()"
+                  panelClass="panel-md" name="Seasons">
+        <mat-option *ngFor="let season of seasonSelectList" [value]="season.id" [attr.name]="season.year">
+          {{ season.year }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div *ngIf="selectedSeasonId !== undefined" class="seasons-grid-container">
+      <div class="grid-filters-container">
+        <filter [filterDefs]="this.filterDefs" (onFilterChangeEvent)="onFilterChangeEvent($event)"></filter>
+      </div>
+
+      <grid [data]="paginatedRecords" [columnDefs]="columnDefs"
+            (onPageChangeEvent)="searchSeasons($event)" (onTableRowSelectEvent)="onShowSeasonDetailComponent($event)"></grid>
+    </div>
+  </div>
+</section>

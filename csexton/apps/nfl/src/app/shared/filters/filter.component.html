@@ -1,0 +1,24 @@
+<mat-card class="filters-container">
+  <mat-card-header class="filters-header">
+    <mat-card-title>Filters</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngFor="let filterDef of filterDefs">
+      <label class="filter-label">{{ filterDef.displayHeader }}</label>
+      <mat-form-field appearance="fill" class="filter-select">
+        <mat-select (selectionChange)="onSelectionChangeEvent($event, filterDef.displayHeader)"
+                    panelClass="panel-md" [attr.name]="filterDef.displayHeader"
+                    [value]="getDefaultFilter(filterDef)">
+          <mat-option *ngFor="let filter of filterDef.filters" [value]="filter" [attr.name]="filter.field">
+            <ng-container *ngIf="filter.displayText !== undefined; else displayField">
+              {{ filter.displayText }}
+            </ng-container>
+            <ng-template #displayField>
+              {{ filter.field }}
+            </ng-template>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

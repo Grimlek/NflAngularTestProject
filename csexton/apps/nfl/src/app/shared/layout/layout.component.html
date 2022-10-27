@@ -1,0 +1,17 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened>
+    <img src="/assets/nfl.png" alt="Nfl Logo" class="branding-logo" />
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let listOption of sideNavList" routerLink="{{listOption.routePath}}"
+                     [ngClass]="{ active: (pageRoutePath !== '' && listOption.routePath.endsWith(pageRoutePath ?? 'none'))
+                                            || (listOption.isDefault && pageRoutePath === '') }">
+        {{listOption.name}}
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <h1 class="page-title">{{pageTitle ?? defaultTitle}}</h1>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

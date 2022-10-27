@@ -1,0 +1,34 @@
+.table-container {
+  display: inline-block;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  table-layout: fixed;
+
+
+  & th {
+    font-weight: bold;
+  }
+
+  & .mat-row.hovered,
+  & .mat-row.highlighted.hovered {
+    background: #F2F2F2;
+  }
+
+  & .mat-row.highlighted {
+    background: #EEEEEE;
+  }
+}

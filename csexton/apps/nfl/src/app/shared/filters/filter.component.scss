@@ -1,0 +1,16 @@
+.filters-container {
+  & .filters-header .mat-card-header-text {
+    margin: 0 0 10px 0 !important;
+  }
+
+  & .filter-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: lighter;
+    margin-bottom: 7px;
+  }
+
+  & .filter-select {
+    width: 100%;
+  }
+}
